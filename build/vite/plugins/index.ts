@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 import { configCompressPlugin } from './compress'
 import { configImageMinPlugin } from './imageMin'
+import { vantStyleImport } from './vantStyleImport'
 
 type Plugins = (Plugin | Plugin[])[]
 
@@ -16,6 +17,8 @@ export function configVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 
     // 图片压缩 vite-plugin-imagemin
     vitePlugins.push(configImageMinPlugin())
+    // vant 按需引入 vantStyleImport
+    vitePlugins.push(vantStyleImport())
   }
 
   console.log(viteEnv)
