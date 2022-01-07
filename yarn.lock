@@ -4882,6 +4882,13 @@ postcss-custom-selectors@^5.1.2:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0-rc.3"
 
+postcss-design-convert@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.npm.taobao.org/postcss-design-convert/download/postcss-design-convert-1.1.3.tgz#2d6ae9308f329cc16d717e77e248e747eba68859"
+  integrity sha1-LWrpMI8ynMFtcX534kjnR+umiFk=
+  dependencies:
+    postcss "^7.0.6"
+
 postcss-dir-pseudo-class@^5.0.0:
   version "5.0.0"
   resolved "https://registry.nlark.com/postcss-dir-pseudo-class/download/postcss-dir-pseudo-class-5.0.0.tgz#6e3a4177d0edb3abcc85fdb6fbb1c26dabaeaba2"

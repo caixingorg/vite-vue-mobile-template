@@ -15,6 +15,9 @@ module.exports = ({ file }) => {
       'postcss-preset-env': {},
       'postcss-px-to-viewport': {
         viewportWidth: 750, // 视窗的宽度，对应的是我们设计稿的宽度，一般是750
+        // viewportWidth({ file }) {
+        //   return file.indexOf('vant') !== -1 ? 750 : 375
+        // },
         viewportUnit: 'vw', // 指定需要转换成的视窗单位，建议使用vw
         selectorBlackList: ['.ignore', '.hairlines'], //  指定不转换为视窗单位的类，建议定义一至两个通用的类名
         minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
@@ -41,11 +44,12 @@ module.exports = ({ file }) => {
          * 设置为正则表达式，将会忽略匹配该正则的所有文件
          * 如果设置为数组，那么该数组内的元素都必须是正则表达式
          */
-        exclude: [/node_modules\/vant/],
+        // exclude: [/node_modules\/vant/],
         landscape: false, // 是否自动加入 @media (orientation: landscape)，其中的属性值是通过横屏宽度来转换的
         landscapeUnit: 'vw', // 横屏单位
         landscapeWidth: 1334, // 横屏宽度
       },
+      'postcss-design-convert': { multiple: 2, units: ['vw'], selector: /^\.van-/ },
       'postcss-viewport-units': {},
       cssnano: {
         'cssnano-preset-advanced': {
