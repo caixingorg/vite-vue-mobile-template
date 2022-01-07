@@ -3,7 +3,9 @@ module.exports = {
     'postcss-write-svg': {},
     'postcss-preset-env': {},
     'postcss-pxtorem': {
-      rootValue: 37.5,
+      rootValue({ file }) {
+        return file.indexOf('vant') !== -1 ? 37.5 : 75
+      },
       // 转换成的rem后，保留小数点后几位
       unitPrecision: 5,
       /**
